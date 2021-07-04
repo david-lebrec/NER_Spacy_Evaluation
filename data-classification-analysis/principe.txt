@@ -1,0 +1,10 @@
+{
+'PERSON\n' : ['B-PER\n',  'I-PER\n'],
+'LOC\n': ['B-LOC\n', 'I-LOC\n'],
+'ORG\n': ['B-ORG\n', 'I-ORG\n'],
+'NORP\n': ['B-MISC\n', 'I-MISC\n']
+}
+
+['GPE\n','DATE\n', 'ORDINAL\n', 'CARDINAL\n', ,  'MONEY\n', 'FAC\n', 'PRODUCT\n', 'TIME\n', 'LANGUAGE\n', 'EVENT\n', 'PERCENT\n', 'WORK_OF_ART\n', 'QUANTITY\n']
+
+['O\n']

@@ -1,0 +1,25 @@
+1/ se borne-t-on à sortir des statistiques macros : example :
+spacy a classifié 90 PERS (dans tous les documents) le fichier de référence à 100 PERS
+on ferait un calcul sur la base suivante
+90 vrais positifs
+10 faux positifs
+
+précision_pers = 90 / 100
+
+Si on veut des métriques exactes la seule façon de faire
+serait de prendre chaque mot classifie et de le mettre en face de la classification de sapcy mais on perd la partie contextuelle de la NLP
+puisque les fichiers de sortie des deux outils sont différents
+
+Plusieurs solutions baisant l'analyse sont possibles
+une classification d'un même mot est la même pour tout le texte (on ne peut pas coresspondre les fichiers de ner ligne par ligne)
+on veut quand meme faire correspondre les entites ligne par ligne (mot par mot), on introduit donc un biais important car spacy n'aura plus un contexte document mais un contexte mot ;)
+
+Attention les mauvais résultat de spacy vs la références peuvent s'expliquer par une mauvaise matrice correspondance il faut donc bien vérifier
+le entités proposés par spacy :
+Nous somme certains que le fichier test.txt contient tout le corpus de documents sans troncage ?
+
+spacy detécte de nombreuse entitées non présentes dans la sources.
+
+explication des scores:
+spacy associe beaucoup de nom de personnes (PERSON) à des organisations ce choix est très souvent mauvais mais pas sustématiquement faux à part un pointage manuel fastidieux il est difficile à traiter
+spacy dans le cas de LOC est plus précis : parfois il détecte des EVENT (quelque chose à un endroit), spacy confond souvent entre un nom de pays, langue
